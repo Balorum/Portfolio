@@ -32,14 +32,26 @@
   font-size: 2.5rem;
 }
 .card {
+  display: flex; /* Enables flexbox */
+  flex-direction: column; /* Aligns items vertically */
+  height: 100%; /* Ensures all cards stretch to the same height */
+}
+.card-projects {
   box-shadow: 0 0 10px rgba(0,0,0,0.1); /* Adds a subtle shadow around the card */
 }
+.card-body-projects {
+  padding: 15px;
+}
+
 .card-img-top {
   max-height: 180px; /* Adjust this value to fit the image properly in the card */
   object-fit: cover; /* This makes sure the image covers the area properly */
 }
 .card-body {
-  padding: 15px;
+  flex: 1; /* Allows the card body to take available space */
+  display: flex;
+  flex-direction: column; /* Aligns text vertically */
+  justify-content: center; /* Center aligns the text */
 }
 .card-title {
   font-size: 1.25rem;
@@ -82,6 +94,10 @@
 /* Additional CSS for Contact Section */
 .contact-section {
   padding: 50px 0;
+  text-align: center; /* Center text in the contact section */
+}
+.contact-section .row {
+  justify-content: center; /* Center the content within the row */
 }
 .contact-section h2 {
   font-size: 2.5rem;
@@ -164,9 +180,9 @@ html {
     <div class="row">
       <!-- Project 1 -->
       <div class="col-md-4 mb-4">
-        <div class="card">
+        <div class="card-projects">
           <img src="images/projects/project_1.jpg" class="card-img-top" alt="Project 1">
-          <div class="card-body">
+          <div class="card-body-projects">
             <h5 class="card-title">MultiModel Classifier</h5>
             <p class="card-text">Comprehensive image classification application based on the CIFAR-10 dataset. The application includes three Jupyter notebooks for training different neural network architectures (MobileNetV2, InceptionV3, and ResNet50) and a web interface built with Gradio that allows users to upload images and obtain predictions from these trained models.</p>
             <a href="https://huggingface.co/spaces/the10or/class_pic" class="btn btn-primary">Link</a>
@@ -176,9 +192,9 @@ html {
       </div>
       <!-- Project 2 -->
       <div class="col-md-4 mb-4">
-        <div class="card">
+        <div class="card-projects">
           <img src="images/projects/project_2.jpg" class="card-img-top" alt="Project 2">
-          <div class="card-body">
+          <div class="card-body-projects">
             <h5 class="card-title">StockSense</h5>
             <p class="card-text">A web application that provides financial data for stocks, including key metrics such as open, close, and volume. It also features a sentiment analysis tool that processes news related to the selected stock, displaying predictions on potential price movement (growth or decline) based on the analysis. The application is deployed on Koyeb for seamless accessibility.</p>
             <a href="https://dark-stesha-knure-34160b0b.koyeb.app/" class="btn btn-primary">Link</a>
@@ -188,9 +204,9 @@ html {
       </div>
       <!-- Project 3 -->
       <div class="col-md-4 mb-4">
-        <div class="card">
+        <div class="card-projects">
           <img src="images/projects/3.jpg" class="card-img-top" alt="Project 3">
-          <div class="card-body">
+          <div class="card-body-projects">
             <h5 class="card-title">Project 3</h5>
             <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sed nisl erat. Sed et purus ornare, eleifend tellus ut, fermentum arcu.</p>
             <a href="#" class="btn btn-primary">Blog Post</a>
@@ -216,7 +232,6 @@ html {
           <div class="card-body">
             <h5 class="card-title">Python</h5>
             <p class="card-text">Skilled in data analysis with NumPy and Pandas, web development using Flask, and web scraping with Beautiful Soup. Experienced in database management with MySQL and PostgreSQL</p>
-<!--            <a href="#" class="btn btn-outline-primary">Link to course or bootcamp</a>-->
           </div>
         </div>
       </div>
@@ -227,7 +242,6 @@ html {
           <div class="card-body">
             <h5 class="card-title">Machine Learning and Deep Learning</h5>
             <p class="card-text">Knowledgeable in machine learning using Scikit-learn and SciPy, as well as natural language processing with NLTK. Competent in deep learning techniques with TensorFlow and Keras, and have basic exposure to PyTorch.</p>
-<!--            <a href="#" class="btn btn-outline-primary">Link to course or bootcamp</a>-->
           </div>
         </div>
       </div>
@@ -238,7 +252,6 @@ html {
           <div class="card-body">
             <h5 class="card-title">Data Visualization</h5>
             <p class="card-text">Experienced in data visualization and exploratory data analysis (EDA) using Seaborn, Matplotlib, and Plotly. Familiar with creating basic dashboards and reports in Power BI.</p>
-<!--            <a href="#" class="btn btn-outline-primary">Link to course or bootcamp</a>-->
           </div>
         </div>
       </div>
@@ -249,7 +262,6 @@ html {
           <div class="card-body">
             <h5 class="card-title">Deployment</h5>
             <p class="card-text">Familiar with deploying machine learning models using Hugging Face and Koyeb. Experienced with containerization through Docker and managing databases on Aiven. Additionally, skilled in creating interactive applications with Gradio.</p>
-<!--            <a href="#" class="btn btn-outline-primary">Link to course or bootcamp</a>-->
           </div>
         </div>
       </div>
@@ -270,36 +282,30 @@ html {
       </div>
     </div>
     <div class="row">
-      <div class="col-lg-2 col-md-4 mb-4">
-        <a href="https://linkedin.com/in/yourusername" target="_blank">
+      <div class="col-lg-2 col-md-4 mb-4 text-center"> <!-- Center icon with text -->
+        <a href="https://www.linkedin.com/in/nikita-remeshevskyi-493411239/" target="_blank">
           <img src="images/icons/linkedin.png" alt="LinkedIn" class="social-icon">
           LinkedIn
         </a>
       </div>
-      <div class="col-lg-2 col-md-4 mb-4">
+      <div class="col-lg-2 col-md-4 mb-4 text-center">
         <a href="https://t.me/Nikita_Rem" target="_blank">
           <img src="images/icons/telegram.png" alt="Telegram" class="social-icon">
           Telegram
         </a>
       </div>
-      <div class="col-lg-2 col-md-4 mb-4">
+      <div class="col-lg-2 col-md-4 mb-4 text-center">
         <a href="https://github.com/Balorum" target="_blank">
           <img src="images/icons/github.png" alt="GitHub" class="social-icon">
           GitHub
         </a>
       </div>
-      <div class="col-lg-2 col-md-4 mb-4">
-        <a href="https://medium.com/@yourusername" target="_blank">
-          <img src="images/icons/medium.png" alt="Medium" class="social-icon">
-          Medium
+      <div class="col-lg-2 col-md-4 mb-4 text-center">
+        <a href="https://wa.me/+353877062590?text=Hi%20I%20want%20to%20hire%20you" target="_blank">
+          <img src="images/icons/whatsapp.png" alt="WhatsApp" class="social-icon">
+          WhatsApp
         </a>
       </div>
-<!--      <div class="col-lg-2 col-md-4 mb-4">-->
-<!--        <a href="https://youtube.com/c/yourchannel" target="_blank">-->
-<!--          <img src="images/icons/youtube.png" alt="YouTube" class="social-icon">-->
-<!--          YouTube-->
-<!--        </a>-->
-<!--      </div>-->
     </div>
   </div>
 </section>
